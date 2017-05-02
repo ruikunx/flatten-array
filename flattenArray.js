@@ -1,4 +1,4 @@
-function flattenArray_ES5(arr) {
+function flattenArrayES5(arr) {
   var new_arr = [];
   for (var i = 0; i < arr.length; i++) {
     var new_arr_tmp = arr[i];
@@ -10,5 +10,5 @@ function flattenArray_ES5(arr) {
   return new_arr;
 }
 
-const flattenArray_ES6 = 
+const flattenArrayES6 = 
   arr => arr.reduce((accumulated, current_value) => accumulated.concat(Array.isArray(current_value) ? flattenArray_ES6(current_value) : current_value), []);
