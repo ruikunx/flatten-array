@@ -1,11 +1,14 @@
 function flattenArrayES5(arr) {
   var new_arr = [];
   for (var i = 0; i < arr.length; i++) {
-    var new_arr_tmp = arr[i];
-    if (Array.isArray(new_arr_tmp)) {
-      new_arr_tmp = flattenArrayES5(new_arr_tmp);
+    var arr_value = arr[i];
+    if (Array.isArray(arr_value)) {
+      var new_arr_tmp = flattenArrayES5(arr_value);
+      new_arr = new_arr.concat(new_arr_tmp);
     }
-    new_arr = new_arr.concat(new_arr_tmp);
+    else {
+      new_arr = new_arr.concat(arr_value);
+    }
   }
   return new_arr;
 }
