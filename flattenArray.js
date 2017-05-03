@@ -3,8 +3,7 @@ function flattenArrayES5(arr) {
   for (var i = 0; i < arr.length; i++) {
     var arr_value = arr[i];
     if (Array.isArray(arr_value)) {
-      var new_arr_tmp = flattenArrayES5(arr_value);
-      new_arr = new_arr.concat(new_arr_tmp);
+      new_arr = new_arr.concat(flattenArrayES5(arr_value));
     }
     else {
       new_arr = new_arr.concat(arr_value);
